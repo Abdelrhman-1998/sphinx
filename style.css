@@ -1,0 +1,228 @@
+/* Responsive Scaling */
+body{
+    margin: 0px;
+    font-family: sans-serif;
+
+}
+.gameContainer{
+    width: 100%;
+}
+.game{
+    width: 1280px;
+    height: 100vh;
+    /* background-color: red; */
+    transition: all 500ms ease-in-out !important;
+    transform-origin: top left;
+    position: relative;
+  
+    user-select: none;}
+
+.icon1,.icon2{
+    height:55px;
+    cursor: pointer;
+}
+.right,.wrong{
+    display: block;
+    top:-51px;
+    right: calc(-10px);
+    display: none;
+    perspective: 100px;
+}
+.right img,.wrong img{
+    width: 34px;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.pre-loader{
+    height: 100vh;
+    display: flex;
+
+}
+.close{
+    width: 45px;
+    cursor: pointer;
+}
+.loading{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transform: rotate(135deg);
+}
+.square-bottom-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation-name: loading4;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.square-top-left{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    animation-name: loading2;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.square-top-right{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    animation-name: loading1;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.square-bottom-right{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    animation-name: loading3;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.square{
+    width: 20px ;
+    height: 20px;
+    background-color: #0fa0c5;
+    border: 2px solid #0fa0c5;
+}
+@keyframes loading1{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(10px) translateY(10px) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(-90deg);
+    }
+}
+@keyframes loading2{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-10px) translateY(10px) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(90deg);
+    }
+}
+@keyframes loading3{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(10px) translateY(-10px) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(90deg);
+    }
+}
+@keyframes loading4{
+    0%{
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform: translateX(-10px) translateY(-10px) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(-90deg);
+    }
+}
+.wrong img{
+    animation-name: hideAndseek;
+    animation-duration:0.6s;
+    animation-play-state:paused;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+}
+@keyframes hideAndseek{
+   0% {
+        transform: translateZ(0px);
+    }
+    50%{
+        transform: translateZ(10px);
+    }
+    100%{
+        transform: translateZ(0px);
+    }
+}
+.footerIcon{
+    height:60px;
+    cursor: pointer;
+}
+.game div:first-child p{
+    font-size: 30px;
+ 
+}
+.modal1,.modal2{
+    display: none;
+}
+.gameBody{
+    height: 710.4px;
+    position: relative;
+    background-color: #0fa0c5;
+}
+.gameFooter{
+    background-color: #deecf6;
+    padding-top: 32px;
+}
+
+.gameFooter p{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cardNumber{
+    width: 120px;
+    background-color: white;
+    border:3px solid #0fa0c5;
+    border-radius: 10px;
+}
+
+.gameCards{
+    overflow: auto;
+    position: absolute;
+    top:-16px;
+    width: calc(100% - 32px);
+    left: 16px;
+    padding: 16px;
+    height: calc(100% + 32px);
+    background-color: white;
+    border: 4px solid red;
+    border-radius: 16px;
+}
+.gameCard div:first-child{
+    width: 400px;
+}
+
+.icon6{
+    opacity: 0.5;
+}
+.gameCard p:last-child{
+    margin-top: 50px !important;
+}
+.carousel-item{
+    transition-delay: 0 !important;
+    transition: transform  0.6s 0s linear !important;
+}
+.choice{
+    background-color: #0fa0c5;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    perspective: 100px;
+}
+@media(min-width:890px){
+    .gameBody{
+        height:calc(100% - (211px));;
+    }
+
+
+}

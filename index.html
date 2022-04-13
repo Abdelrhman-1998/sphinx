@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" >
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+    <script>
+        window.addEventListener("load",()=>{
+            setTimeout(()=>{
+                gameContainer.setAttribute("class"," game d-block");
+                preloader.style.display="none";
+            }, 3000);
+        })
+    </script>
+</head>
+<body >
+            <div class="pre-loader w-100 justify-content-center align-items-center" id="preloader" >
+                    <div class="loading position-relative">
+                        <div class="square square-top-left ">
+
+                        </div>
+                        <div class="square square-top-right ">
+                            
+                        </div>
+                        <div class="square square-bottom-right">
+                            
+                        </div>
+                        <div class="square square-bottom-left ">
+                            
+                        </div>
+                    </div>
+            </div>
+           <div class="game d-none" id="gameContainer">
+               <div class="gameHeader d-flex justify-content-between align-items-center p-3 mb-3" id="gameHeader">
+                <div class="headerTitle">
+                    <p class="p-0 m-0 ">Circle, choose and write.</p>
+                </div>
+                <div class="d-flex gap-4">
+                    <button class="icon1" onclick="openModal(modal1,modal2,gameHeader,gameBody,gameFooter)">
+                        <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/resourse_icon.png" alt="icon1">
+                    </button>
+                    <button class="icon2" onclick="openModal(modal2,modal1,gameHeader,gameBody,gameFooter)">
+                        <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/help_icon.png" alt="icon2">
+                    </button>
+                </div>
+               </div>
+               <div class="gameBody" id="gameBody">
+                        <div class="gameCards position-relative" id="gameCards">
+                            <div id="carouselExampleControls" class="carousel slide h-100 d-flex justify-content-center flex-column" data-wrap="false" data-interval="false" >
+                                <div class="carousel-inner h-100 d-flex align-items-center">
+                                  <div class="carousel-item active gameCard" id="carousel-item1">
+                                        <div class=" ms-auto me-auto">
+                                                <img class="w-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/p19e23/1.png" alt="bag">
+                                        </div>  
+                                        <p class="text-center mt-2 mb-2">
+                                            What's 
+                                            <button id="choice1" class="choice position-relative me-2" onclick="rightAnswer(choice1,choice2)">this
+                                                <span class="right position-absolute">
+                                                    <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                                </span>
+                                            </button> / 
+                                            <button onclick="wrongAnswer(choice2)" id="choice2"  class="choice position-relative me-2">
+                                                that
+                                                <span class="wrong position-absolute">
+                                                    <img  src="Capture.PNG" alt="wrong">
+                                                </span>
+                                            </button> ?
+                                        </p>
+                                        <p class="text-center mt-5">
+                                            <button  onclick="rightAnswer(choice3,choice4)" id="choice3" class="choice me-2 position-relative">It's
+                                                <span class="right position-absolute">
+                                                    <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                                </span>
+                                            </button> / 
+                                            <button onclick="wrongAnswer(choice4)"  id="choice4" class="choice me-2 position-relative"> 
+                                            They are
+                                            <span class="wrong position-absolute">
+                                                <img  src="Capture.PNG" alt="wrong">
+                                            </span>
+                                            </button> an orange school bag
+                                        </p>
+                                  </div>
+                                  <div class="carousel-item gameCard">
+                                        <div class=" ms-auto me-auto">
+                                                <img class="w-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/p19e23/2.png" alt="bag">
+                                        </div>  
+                                        <p class="text-center mt-2 mb-2">
+                                            What are <button onclick="wrongAnswer(choice5)" class="choice position-relative me-2" id="choice5">
+                                                these
+                                                <span class="wrong position-absolute">
+                                                    <img  src="Capture.PNG" alt="wrong">
+                                                </span>
+                                            </button> / <button class="choice position-relative me-2" id="choice6" onclick="rightAnswer(choice6,choice5)">
+                                                those
+                                                <span class="right position-absolute">
+                                                    <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                                </span>
+                                            </button> ?
+                                        </p>
+                                        <p class="text-center mt-4">
+                                            <button onclick="wrongAnswer(choice7)" class="choice me-2 position-relative" id="choice7">It's
+                                                <span class="wrong position-absolute">
+                                                    <img  src="Capture.PNG" alt="wrong">
+                                                </span>
+                                            </button> / 
+                                            <button onclick="rightAnswer(choice8,choice7)" class="choice me-2 position-relative" id="choice8">  
+                                            They are
+                                            <span class="right position-absolute">
+                                                <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                            </span>
+                                            </button> green pens.
+                                        </p>
+                                  </div>
+                                  <div class="carousel-item gameCard">
+                                    <div class=" ms-auto me-auto ">
+                                            <img class="w-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/p19e23/3.png" alt="bag">
+                                    </div>  
+                                    <p class="text-center mt-2 mb-2">
+                                        What's <button onclick="wrongAnswer(choice9)"  class="choice me-2 position-relative" id="choice9">this
+                                            <span class="wrong position-absolute">
+                                                <img  src="Capture.PNG" alt="wrong">
+                                            </span>
+                                        </button> / <button onclick="rightAnswer(choice10,choice9)" class="choice me-2 position-relative" id="choice10">that
+                                            <span class="right position-absolute">
+                                                <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                            </span>
+                                        </button> ?
+                                    </p>
+                                    <p class="text-center mt-4">
+                                        <button onclick="rightAnswer(choice11,choice12)" class="choice me-2 position-relative" id="choice11">It's
+                                            <span class="right position-absolute">
+                                                <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                            </span>
+                                        </button> / 
+                                        <button onclick="wrongAnswer(choice12)" class="choice me-2 position-relative" id="choice12">  
+                                        They're
+                                        <span class="wrong position-absolute">
+                                            <img  src="Capture.PNG" alt="wrong">
+                                        </span>
+                                        </button> a blue calculator.
+                                    </p>
+                                  </div>
+                                  <div class="carousel-item gameCard">
+                                    <div class=" ms-auto me-auto">
+                                            <img class="w-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/p19e23/4.png" alt="bag">
+                                    </div>  
+                                    <p class="text-center mt-5 mb-2">
+                                        What are <button onclick="rightAnswer(choice13,choice14)"  class="choice position-relative me-2" id="choice13">these
+                                            <span class="right position-absolute">
+                                                <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                            </span>
+                                        </button> / <button onclick="wrongAnswer(choice14)" id="choice14" class="choice  position-relative me-2">those
+                                            <span class="wrong position-absolute">
+                                                <img  src="Capture.PNG" alt="wrong">
+                                            </span>
+                                        </button> ?
+                                    </p>
+                                    <p class="text-center ">
+                                        <button onclick="wrongAnswer(choice15)" id="choice15" class="choice me-2 position-relative">It's
+                                            <span class="wrong position-absolute">
+                                                <img  src="Capture.PNG" alt="wrong">
+                                            </span>
+                                        </button> / 
+                                        <button id="choice16" onclick="rightAnswer(choice16,choice15)" class="choice me-2 position-relative">  
+                                        They are
+                                        <span class="right position-absolute">
+                                            <img  src="https://educationalrc.org/tasks/2/assets/images/tikMark.png" alt="right">
+                                        </span>
+                                        </button> yellow compasses.
+                                    </p>
+                              </div>
+                                </div>
+        
+                            </div>
+                        
+                                <div class="dummyImage modal1  position-absolute top-0 start-0 p-3 " id="modal1">
+                                    <img src="https://educationalrc.org/tasks/2/assets/images/dummy.jpg" alt="dummyImage" class="w-100 d-block" >
+                                    <div class="position-absolute top-0 close end-0 me-2 mt-2 " onclick="closeWindow(modal2,modal1,gameHeader,gameBody,gameFooter)">
+                                            <img src="https://educationalrc.org/tasks/2/assets/images/close_icon.png" alt="close" class="w-100 d-block">
+                                    </div>
+                                </div>
+                                <div  class="helpMe modal2 fs-4 position-absolute top-0 start-0 p-3 bg-white w-100 h-100" id="modal2">
+                                    Help content goes there.
+                                    <div  onclick="closeWindow(modal2,modal1,gameHeader,gameBody,gameFooter)" class="position-absolute top-0 close end-0 me-2 mt-2 ">
+                                        <img src="https://educationalrc.org/tasks/2/assets/images/close_icon.png" alt="close" class="w-100 d-block">
+                                    </div>
+                                </div>
+                        
+          
+                            <!-- <div class="helpMe">
+
+                            </div> -->
+                        </div>
+               </div>
+         <div class="gameFooter d-flex justify-content-between align-items-center ps-3 pe-3 pb-3" id="gameFooter">
+            <button class="icon3 footerIcon" onclick="resetAll(showAnswers)" >
+                <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/replay_icon.png" alt="icon3">
+            </button>
+                <div class="d-flex gap-4 ">
+                    <button onclick="resetAnswer(showAnswers)" class="icon4 footerIcon original" >
+                        <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/reload_icon.png" alt="icon4">
+                    </button>
+                    <button class="icon5 footerIcon " onclick="showAnswer(showAnswers)" id="showAnswers">
+                        <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/showAns_icon.png" alt="icon5">
+                    </button>
+                    <button class="icon6  footerIcon " onclick="prevCard(showAnswers)" id="previousArrow">
+                        <img class="h-100 d-block " src="https://educationalrc.org/tasks/2/assets/images/back_icon.png" alt="icon6" href="#carouselExampleControls" role="button" data-slide="prev" >
+                    </button>
+                    <button class="bg-white cardNumber d-flex align-items-center justify-content-center">
+                        <p class="p-0 m-0"> <span class="previous-page fw-bold" id="pageIndex">1</span> of <span class="next-page fw-bold"> 4</span></p>
+                    </button>
+                    <button class="icon7 footerIcon" onclick="nextCard(showAnswers)" id="nextArrow">
+                        <img class="h-100 d-block" src="https://educationalrc.org/tasks/2/assets/images/next_icon.png" alt="icon7" href="#carouselExampleControls" role="button" data-slide="next">
+                    </button>
+                </div>
+        </div>
+
+           </div> 
+   
+           <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+  <script src="main.js"></script>
+</body>
+</html>
