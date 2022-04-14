@@ -26,7 +26,7 @@ function resize (){
         gameContainer.style.width="70%";
         gameContainer.style.height="100vh";
         gameContainer.style.zIndex="";
-        let left=(window.screen.width*0.3)/2;
+        let left=(window.innerWidth*0.3)/2;
         console.log(left)
         gameContainer.style.left=left+"px";
     }
